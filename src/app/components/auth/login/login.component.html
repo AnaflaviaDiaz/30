@@ -12,7 +12,7 @@
       <input id="pass" class="form-control" type="password" formControlName="password">
     </div>
     <div class="my-3 float-right">
-      <button type="submit" class="btn btn-primary">Ingresar</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Ingresar</button>
     </div>
   </form>
 
