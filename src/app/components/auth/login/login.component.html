@@ -1,0 +1,26 @@
+<div class="container-fluid mt-5">
+  <h1>Nombre</h1>
+</div>
+<div class="container-fluid">
+  <form class="" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <div class="my-3">
+      <label for="email">Correo</label>
+      <input class="form-control" id="email" type="email" formControlName="email">
+    </div>
+    <div class="my-3">
+      <label for="pass">Contraseña</label>
+      <input id="pass" class="form-control" type="password" formControlName="password">
+    </div>
+    <div class="my-3 float-right">
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+    </div>
+  </form>
+
+  <div class="my-3">
+    <button class="btn btn-block btn-danger">Ingresa con Google</button>
+  </div>
+
+  <div class="my-3">
+    <button class="btn btn-block btn-danger">Ingresa con Facebook</button>
+  </div>
+</div>
