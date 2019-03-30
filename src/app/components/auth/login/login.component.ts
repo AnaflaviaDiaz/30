@@ -11,8 +11,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm = this._formBuilder.group({
-    email: ['', Validators.required, Validators.email],
-    password: ['', Validators.required, Validators.length > 4]
+    email: ['', Validators.compose([Validators.required, Validators.email, Validators.pattern('[^ @]*@[^ @]*')])],
+    password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
   });
 
   constructor(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this._authSrv.login(user.email, user.password)
       .then(res => {
         console.log(res);
-        this._router.navigate(['']);
+        this._router.navigate(['/home']);
       });
   }
 
